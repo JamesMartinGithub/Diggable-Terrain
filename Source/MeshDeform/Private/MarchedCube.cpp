@@ -195,9 +195,9 @@ int AMarchedCube::CalculateTriIndex(FVector3d offset, int indexOffset, bool isSu
 	int triIndex = 0;
 	int cornerIndex = 0;
 	int cornerCount = 0;
-	for (int iZ	 = 0; iZ < 2 * boxSize; iZ += boxSize) {
-		for (int iY = 0; iY < 2 * boxSize; iY += boxSize) {
-			for (int iX = 0; iX < 2 * boxSize; iX += boxSize) {
+	for (float iZ	 = 0; iZ < 2 * boxSize; iZ += boxSize) {
+		for (float iY = 0; iY < 2 * boxSize; iY += boxSize) {
+			for (float iX = 0; iX < 2 * boxSize; iX += boxSize) {
 				if (testDistance) {
 					if ((offset.Z > 0 && (cornerIndex == 0 || cornerIndex == 1 || cornerIndex == 2 || cornerIndex == 3)) ||
 						(offset.Y > 0 && (cornerIndex == 0 || cornerIndex == 1 || cornerIndex == 4 || cornerIndex == 5)) ||
@@ -283,9 +283,9 @@ void AMarchedCube::InitialiseCorners() {
 			for (int X = 0; X < boxNum; X++) {
 				cornerIndex = 0;
 				// Single box
-				for (int iZ = 0; iZ < 2 * boxSize; iZ += boxSize) {
-					for (int iY = 0; iY < 2 * boxSize; iY += boxSize) {
-						for (int iX = 0; iX < 2 * boxSize; iX += boxSize) {
+				for (float iZ = 0; iZ < 2 * boxSize; iZ += boxSize) {
+					for (float iY = 0; iY < 2 * boxSize; iY += boxSize) {
+						for (float iX = 0; iX < 2 * boxSize; iX += boxSize) {
 							// Only add a cornerValue if the corner does not overlap a previously added corner
 							if (Z > 0 && (cornerIndex == 0 || cornerIndex == 1 || cornerIndex == 2 || cornerIndex == 3)) {
 								cornerMap.Add(cornerIndex + cornerTotal, cornerMap[cornerPairsZ[cornerIndex] + (cornerTotal - (8 * boxNum * boxNum))]);
